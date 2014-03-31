@@ -1,0 +1,50 @@
+#!/usr/bin/env node
+
+var path = require('path');
+var fs = require('fs');
+var portfinder = require('portfinder');
+var open = require('open');
+
+var serve = require('../lib/server');
+
+var argv = require('minimist')(process.argv.slice(2), {
+  default: {
+    cwd: process.cwd(),
+    noopen: false
+  },
+  boolean: ['noopen']
+});
+
+if (argv.help) {
+  fs
+    .createReadStream(path.join(__dirname, 'usage.txt'))
+    .pipe(process.stdout)
+    .on('end', process.exit);
+} else {
+
+  if (argv.port) {
+    notebook(argv.root, argv.port, argv.noopen)
+  } else {
+    portfinder.getPort(function(err, port) {
+      if (err) {
+        var msg = 'Could not find free port to serve on. Please specify one with --port.\n\n';
+        err.message = msg + err.message;
+        throw err;
+      }
+
+      notebook(argv.cwd, port, argv.noopen);
+    })
+  }
+}
+
+function notebook(cwd, port, noopen, callback) {
+
+  serve(cwd).listen(port, function() {
+    console.error('Serving notebook at http://localhost:' + port + '/');
+    if (!noopen) {
+      open('http://localhost:' + port + '/index.html');
+    }
+    callback && callback();
+  });
+}
+

@@ -1,0 +1,9 @@
+usage: jsbook [options]
+
+  --help              print this help!
+  --port [port]       Use a specific port for serving.
+                        Default: autodetect.
+  --cwd  [path]       Use this path as the root of the notebook.
+                        Default: current working directory.
+  --noopen            Do not automatically open the notebook in the default browser.
+                        Default: open in the default browser.
