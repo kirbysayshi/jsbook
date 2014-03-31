@@ -23,7 +23,7 @@ if (argv.help) {
 } else {
 
   if (argv.port) {
-    notebook(argv.root, argv.port, argv.noopen)
+    notebook(argv.cwd, argv.port, argv.noopen)
   } else {
     portfinder.getPort(function(err, port) {
       if (err) {
