@@ -18,7 +18,6 @@
   "license": "MIT",
   "dependencies": {
     "detective": "^2.3.0",
-    "browserify-cdn": "^0.3.2",
     "browserify": "~3.24.1",
     "javascript-editor": "^0.2.1",
     "portfinder": "^0.2.1",
