@@ -1,6 +1,7 @@
 // { "name": "some book", "formatVersion": "0.1.0" }
 // { "index": 0, "type": "code" }
 
+var d3 = require('d3');
 var a = 'what';
 function what() { return 'what' }
 
