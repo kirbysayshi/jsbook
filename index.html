@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="node_modules/javascript-editor/css/codemirror.css">
   <link rel="stylesheet" href="node_modules/javascript-editor/css/theme.css">
   <link rel="stylesheet" href="/-/main.css">
@@ -12,13 +13,50 @@
   .codelet .in:before { content: "In [" counter(codelet-counter) "]: "; }
   .codelet .out:empty { display: none; }
   .codelet .out:before { content: "Out [" counter(codelet-counter) "]: "; }
-
+  .codelet .in:before, .codelet .out:before {
+    position: absolute;
+    top: 5px;
+    left: -60px;
+  }
+  .codelet .in:before, .codelet .out:before, .last-result, .CodeMirror {
+    font-family:'Source Code Pro', 'Monaco', 'Consolas', monospace;
+    font-size: 12px;
+  }
+  .last-result { padding: 4px 4px; /* To match codemirror */ }
   </style>
 </head>
 <body>
-<div class="status"></div>
-<div class="codelet-list">
-</div>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button
+          type="button"
+          class="navbar-toggle"
+          data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1"
+          >
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">JSBook</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Execute All</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <div class="container-fluid">
+    <div class="status"></div>
+    <div class="js-codelet-list"></div>
+  </div>
 
 <script type="text/javascript" src="/-/kernel-bundle.js"></script>
 </body>
