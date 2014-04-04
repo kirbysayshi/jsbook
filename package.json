@@ -30,6 +30,7 @@
     "less": "^1.7.0",
     "inherits": "^2.0.1",
     "debug": "^0.8.0",
-    "mold-source-map": "^0.3.0"
+    "mold-source-map": "^0.3.0",
+    "mout": "^0.9.0"
   }
 }
