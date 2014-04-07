@@ -33,6 +33,8 @@
     "mold-source-map": "^0.3.0",
     "mout": "^0.9.0",
     "concat-stream": "^1.4.4",
-    "font-awesome": "^4.0.3"
+    "font-awesome": "^4.0.3",
+    "websocket-stream": "^0.5.1",
+    "ws": "^0.4.31"
   }
 }
