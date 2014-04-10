@@ -32,19 +32,19 @@ if (argv.help) {
         throw err;
       }
 
-      notebook(argv.cwd, port, argv.noopen);
+      notebook(argv.cwd, port, argv.noopen, argv._[0]);
     })
   }
 }
 
-function notebook(cwd, port, noopen, callback) {
+function notebook(cwd, port, noopen, opt_filename, opt_callback) {
 
   serve(cwd).listen(port, function() {
     console.error('Serving notebook at http://localhost:' + port + '/');
     if (!noopen) {
-      open('http://localhost:' + port + '/index.html');
+      open('http://localhost:' + port + '/index.html?book=' + (opt_filename || 'book.js'));
     }
-    callback && callback();
+    opt_callback && opt_callback();
   });
 }
 
