@@ -13,6 +13,7 @@
   .codelet .in:before { content: "In [" counter(codelet-counter) "]: "; }
   .codelet .out:empty { display: none; }
   .codelet .out:before { content: "Out [" counter(codelet-counter) "]: "; }
+  .codelet .in .errorLine { background: rgba(255,0,0,0.25); }
   .codelet .in:before, .codelet .out:before {
     position: absolute;
     top: 5px;
