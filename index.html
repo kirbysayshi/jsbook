@@ -29,6 +29,64 @@
     padding: 4px 4px; /* To match codemirror */
     white-space: pre;
   }
+
+
+  .orbiter-status {
+    position: relative;
+    left: -50px;
+  }
+
+  .orbiter-status .status {
+    text-align: center;
+    transition-duration: 0.5s;
+    transition-property: transform;
+    transform: scale(0);
+  }
+
+  .orbiter-status .status.show {
+    transform: scale(1);
+  }
+
+  .orbiter {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    animation-play-state: paused;
+    animation: orbit 2s linear 0s infinite;
+  }
+
+  .orbiter.orbiting {
+    animation-play-state: running;
+  }
+
+  .orbiter .fa-rocket {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    transform: rotate(0deg) scale(0);
+    transition-duration: 1s, 1s, 1s;
+    transition-property: top, left, transform;
+  }
+
+  .orbiter.orbiting .fa-rocket {
+    /*border: 1px solid red;*/
+    transform: rotate(-180deg) scale(1);
+    top: 5%;
+    left: 5%;
+  }
+
+  .orbiter.orbiting.landing .fa-rocket {
+    transform: rotate(-360deg) scale(0);
+    top: 0%;
+    left: 0%;
+  }
+
+  @keyframes orbit {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+  }
   </style>
 </head>
 <body>
