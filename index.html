@@ -54,7 +54,7 @@
     bottom: 0;
     left: 0;
     animation-play-state: paused;
-    animation: orbit 2s linear 0s infinite;
+    animation: orbit 1s linear 0s infinite;
   }
 
   .orbiter.orbiting {
@@ -66,15 +66,15 @@
     top: 0%;
     left: 0%;
     transform: rotate(0deg) scale(0);
-    transition-duration: 1s, 1s, 1s;
+    transition-duration: 0.5s, 0.5s, 0.5s;
     transition-property: top, left, transform;
   }
 
   .orbiter.orbiting .fa-rocket {
     /*border: 1px solid red;*/
     transform: rotate(-180deg) scale(1);
-    top: 5%;
-    left: 5%;
+    top: -50%;
+    left: -50%;
   }
 
   .orbiter.orbiting.landing .fa-rocket {
