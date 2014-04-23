@@ -23,7 +23,7 @@
     "debug": "^0.8.0",
     "detective": "^2.3.0",
     "font-awesome": "^4.0.3",
-    "fs-stream-websocket": "^0.1.2",
+    "fs-stream-websocket": "^0.2.0",
     "inherits": "^2.0.1",
     "javascript-editor": "^0.2.1",
     "jquery": "^2.1.0",
